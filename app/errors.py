@@ -18,6 +18,12 @@ MESSAGES = {
     "GATE_BLOCKED": "存在阻断项，不能签发",
     "NOT_APPROVED": "批次尚未签发",
     "BAD_REQUEST": "请求内容不完整",
+    "REFUND_BAD_FIELD": "退款批次字段不完整",
+    "REFUND_BAD_AMOUNT": "金额必须为正整数分",
+    "REFUND_BAD_DATE": "日期须为 ISO 格式",
+    "BATCH_UNKNOWN": "日结批次不存在",
+    "BATCH_CONFLICT": "同批号内容不一致，已拒收",
+    "BATCH_ALREADY_ISSUED": "日结批次已签发",
 }
 
 

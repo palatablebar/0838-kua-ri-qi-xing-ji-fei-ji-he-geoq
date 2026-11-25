@@ -40,5 +40,26 @@
       </div>
     </article>
   </section>
+  <section class="board refunds-board" aria-label="退款日结对账">
+    <article class="panel" id="panel-refunds">
+      <div class="panel-head"><h2>退款日结对账</h2><span class="hint" id="refund-batch-status">未入账</span></div>
+      <div class="refund-actions">
+        <button id="refund-book" type="button">样例批次入账</button>
+        <button id="refund-receive" type="button" disabled>凭据补到</button>
+        <button id="refund-issue" type="button" disabled>签发日结</button>
+      </div>
+      <div class="table-wrap">
+        <table><thead id="refund-head"></thead><tbody id="refund-body"></tbody></table>
+      </div>
+    </article>
+    <article class="panel" id="panel-refund-days">
+      <div class="panel-head"><h2>日结汇总</h2><span class="hint" id="refund-day-count">--</span></div>
+      <div class="ledger" id="refund-days"></div>
+    </article>
+    <article class="panel" id="panel-refund-vouchers">
+      <div class="panel-head"><h2>凭据认退</h2><span class="hint" id="refund-check-state"></span></div>
+      <div class="ledger" id="refund-voucher-list"></div>
+    </article>
+  </section>
 </main>
 {% endblock %}

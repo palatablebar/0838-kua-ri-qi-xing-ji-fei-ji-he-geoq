@@ -1,0 +1,6 @@
+{
+  "vouchers": [
+    {"voucher_id": "CH1002", "ride_id": "T2", "charged_cents": 250, "received_on": "2026-11-25"},
+    {"voucher_id": "CH1003", "ride_id": "T3", "charged_cents": 300, "received_on": "2026-11-25"}
+  ]
+}

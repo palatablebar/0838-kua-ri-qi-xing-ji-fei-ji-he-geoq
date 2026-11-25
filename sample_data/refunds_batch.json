@@ -1,0 +1,14 @@
+{
+  "batch_id": "RB20261124",
+  "paid_on": "2026-11-24",
+  "vouchers": [
+    {"voucher_id": "CH1001", "ride_id": "T1", "charged_cents": 150}
+  ],
+  "refunds": [
+    {"refund_id": "RF9101", "amount_cents": 150, "voucher_ref": "CH1001"},
+    {"refund_id": "RF9102", "amount_cents": 250, "voucher_ref": "CH1002"},
+    {"refund_id": "RF9103", "amount_cents": 100},
+    {"refund_id": "RF9104", "amount_cents": 300, "voucher_ref": "CH1003"},
+    {"refund_id": "RF9105", "amount_cents": 100, "voucher_ref": "CH1003"}
+  ]
+}

@@ -15,6 +15,7 @@
 | M5 运行对账 | 核对来源行、采信、隔离、重复与计算条目 | `POST /api/stages/reconcile` | `app/reconcile/ledger.py` | `tests/test_reconcile.py` |
 | M6 批次复核 | 带版本号签发或暂缓，拒绝陈旧复核 | `POST /api/runs/{id}/review` | `app/review/service.py` | `tests/test_review.py` |
 | M7 证据交付 | 仅在签发后输出可校验的复核证据 | `GET /api/runs/{id}/evidence` | `app/evidence/render.py` | `tests/test_evidence.py` |
+| M8 退款日结 | 当日出款进当日结算，无凭据暂挂，凭据补到认领且累计不超实扣，同批重跑幂等 | `POST /api/refunds/batches`、`POST /api/refunds/vouchers`、`GET /api/refunds/workbench` | `app/refunds/service.py`、`app/refunds/store.py` | `tests/test_refunds.py` |
 
 ## 输入陷阱
 
@@ -36,3 +37,5 @@
 ## 深度边界
 
 采信层区分编码、重复表头、列数、空值、全角字符、前导零与冲突重复；整理层负责单位和字段边界；计算层执行核心规则；判定层保留原因码；对账层要求来源行等于采信、隔离、重复和忽略之和；复核层使用版本号阻止陈旧签发。
+
+退款日结以退款流水号、凭据号和批次号为幂等键：出款按银行付款日入账，不等晚到凭据；暂挂转已退只翻状态，出款日与金额不动；认退按出款日先后进行，同一凭据累计认退以实扣为上限；同批号内容不一致按冲突拒收；签发后认领继续发生，工作台按当前状态核对。
